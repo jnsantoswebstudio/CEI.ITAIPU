@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+:root {
+  --background: #fbf8f2;
+  --foreground: #302d2d;
+  --card: #ffffff;
+  --card-foreground: #302d2d;
+  --popover: #ffffff;
+  --popover-foreground: #302d2d;
+  --primary: #725852;
+  --primary-foreground: #fffaf2;
+  --secondary: #f3e9cf;
+  --secondary-foreground: #4a3936;
+  --muted: #f2eee7;
+  --muted-foreground: #6f6865;
+  --accent: #b89a5d;
+  --accent-foreground: #2f2725;
+  --destructive: #ba2f32;
+  --border: #dfd6c7;
+  --input: #d8cfc2;
+  --ring: #725852;
+  --chart-1: #725852;
+  --chart-2: #b89a5d;
+  --chart-3: #303032;
+  --chart-4: #a37965;
+  --chart-5: #d9c08a;
+  --radius: 0.9rem;
+  --sidebar: #fbf8f2;
+  --sidebar-foreground: #302d2d;
+  --sidebar-primary: #725852;
+  --sidebar-primary-foreground: #fffaf2;
+  --sidebar-accent: #f3e9cf;
+  --sidebar-accent-foreground: #4a3936;
+  --sidebar-border: #dfd6c7;
+  --sidebar-ring: #725852;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: #725852; color: #fffaf2; }
+
+a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
+
+.font-display { font-family: Georgia, "Times New Roman", serif; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #9b7b3f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 2.2rem;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.surface-shadow { box-shadow: 0 22px 70px rgba(62, 46, 43, 0.12); }
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(114, 88, 82, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(114, 88, 82, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.gold-line { background: linear-gradient(90deg, transparent, #b89a5d, transparent); }
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rise-in { animation: rise-in 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise-in { animation: none; }
+}
